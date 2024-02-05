@@ -1,4 +1,4 @@
-import User from "./User.js";
+import User from "./modules/User.js";
 const tableauUser = [];
 
 const randomURL = `https://randomuser.me/api/?results=20`;
@@ -74,15 +74,10 @@ function sortAZ() {
 
 //ppl.then((res) => console.log(res));
 
-const userInfo = ["alice", "bob", "charlie", "david", "eve", "frank"];
+const userInfo = { name: "alice", age: 25, city: "Paris" };
 const userInfoString = JSON.stringify(userInfo);
-console.log(userInfoString);
-console.log(userInfo);
 
-localStorage.setItem("sss", userInfoString);
-console.log(localStorage.getItem("usrInfo"));
-
-const truc = localStorage.getItem("sss");
-console.log(truc);
-
-localStorage.removeItem("sss");
+localStorage.setItem("untruc", userInfoString);
+let recup = localStorage.getItem("untruc");
+recup = JSON.parse(recup);
+console.log(recup);
